@@ -8,7 +8,7 @@ public class PlayGame {
 		Player jacob = new Player("Jacob", 0);
 		
 		
-		System.out.println("2970");
+		System.out.println("virk nu");
 		System.out.println(mads.getName());
 		System.out.println(mads.getPoints());
 		mads.setName("Peter");
