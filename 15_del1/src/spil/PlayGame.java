@@ -4,7 +4,7 @@ public class PlayGame {
 	
 	public static void main(String[] args)
 	{
-		Player mads = new Player("Mads", 20);
+		Player mads = new Player("Maddfsfdafdsafsdfdss", 20);
 		Player jacob = new Player("Jacob", 0);
 		
 		System.out.println(mads.getName());
