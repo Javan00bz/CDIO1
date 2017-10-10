@@ -26,9 +26,11 @@ public class PlayGame {
 		while (true) {	
 		GUI.getUserButtonPressed(" ", "ROLL DICE");
 		
-		d1 = Dice.roll();
-		d2 = Dice.roll();
+		//d1 = Dice.roll();
+		//d2 = Dice.roll();
 		
+		d1 = 6;
+		d2 = 6;
 			
 		GUI.setDice(d1,d2);
 		
@@ -103,9 +105,9 @@ public class PlayGame {
 		
 		
 	}
-		if (car2>car1) 
+		if (car1>car2) 
 			GUI.getUserButtonPressed(" ", PlayerName1 + " has Won");
-		if (car1>car2)
+		if (car2>car1)
 			GUI.getUserButtonPressed(" ", PlayerName2 + " has Won");
 			
 		}
