@@ -6,9 +6,6 @@ public class PlayGame {
 	
 	public static void main(String[] args)
 	{
-		Player mads = new Player("Mads", 20);
-		Player jacob = new Player("ToBiAz", 0);
-		
 		GUI.addPlayer("ayat", 500);
 		GUI.addPlayer("Alex", 500);
 		
@@ -16,10 +13,13 @@ public class PlayGame {
 		int b;
 		int Ayatcar;
 		int Alexcar;
-		Ayatcar = 0;
-		Alexcar = 0;
+		Ayatcar = 1;
+		Alexcar = 1;
 		
 		boolean qwe = true;
+		
+		GUI.setCar(1, "Ayat");
+		GUI.setCar(1, "Alex");
 		
 		while (qwe == true) {
 		
@@ -31,8 +31,11 @@ public class PlayGame {
 		
 		
 		GUI.removeCar(Ayatcar, "Ayat");
-		GUI.setCar(a+b, "Ayat");
 		Ayatcar = Ayatcar + a+b;
+		GUI.setCar(Ayatcar, "Ayat");
+		
+		if (Ayatcar>40)
+			qwe = false;
 		
 		GUI.getUserButtonPressed(" ", "ROLL DICE");
 		
@@ -41,40 +44,17 @@ public class PlayGame {
 		GUI.setDice(a, b);
 		
 		GUI.removeCar(Alexcar, "Alex");
-		GUI.setCar(a+b, "Alex");
-		Alexcar = Alexcar + a + b;
+		Alexcar = Alexcar + a+b;
+		GUI.setCar(Alexcar, "Alex");
+		
+		if (Alexcar>40)
+			qwe = false;
 		
 		}
 		
-		GUI.getUserButtonPressed("ROLL", "ROLL DICE");
-		GUI.setDice((int)(Math.random()*6+1),(int)(Math.random()*6+1));
-		
-		GUI.getUserButtonPressed("ROLL", "ROLL DICE");
-		GUI.setDice((int)(Math.random()*6+1),(int)(Math.random()*6+1));
-		
-		
-		
-		
-		System.out.println(mads.getName());
-		System.out.println(mads.getPoints());
-		mads.setName("Peter");
-		mads.setPoints(0);
-		System.out.println(mads.getName());
-		System.out.println(mads.getPoints());
-		System.out.println(mads.toString());
-		mads.rollDice();
-		System.out.println(mads.toString());
-		mads.rollDice();
-		mads.rollDice();
-		jacob.rollDice();
-		jacob.rollDice();
-		jacob.rollDice();
-		jacob.rollDice();
-		jacob.rollDice();
-		jacob.rollDice();
-		System.out.println(mads.toString());
-		System.out.println(jacob.toString());
-		
-		
+		if (Ayatcar<Alexcar)
+			GUI.getUserButtonPressed("Ayat", "Ayat har vundet!");
+		if (Ayatcar>Alexcar)
+			GUI.getUserButtonPressed("Alex", "Alex har vundet!");
 	}
 }
