@@ -14,14 +14,15 @@ public class PlayGame {
 		
 		int a;
 		int b;
+		int Ayatcar;
+		int Alexcar;
+		Ayatcar = 0;
+		Alexcar = 0;
 		
 		boolean qwe = true;
 		
 		while (qwe == true) {
-		GUI.setDice((int)(Math.random()*6+1),(int)(Math.random()*6+1));
-		//GUI.setDice(mads.rollDice(), mads.rollDice(), mads.rollDice(), mads.rollDice());
-		//GUI.setDice(3, 2, 1, 3, 2, 1);
-		//GUI.setDice(faceValue1, faceValue2);
+		
 		GUI.getUserButtonPressed(" ", "ROLL DICE");
 		
 		a = (int)(Math.random()*6+1);
@@ -29,8 +30,9 @@ public class PlayGame {
 		GUI.setDice(a,b);
 		
 		
-		GUI.removeCar(a+b, "Ayat");
+		GUI.removeCar(Ayatcar, "Ayat");
 		GUI.setCar(a+b, "Ayat");
+		Ayatcar = Ayatcar + a+b;
 		
 		GUI.getUserButtonPressed(" ", "ROLL DICE");
 		
@@ -38,8 +40,9 @@ public class PlayGame {
 		b = (int)(Math.random()*6+1);
 		GUI.setDice(a, b);
 		
-		GUI.removeCar(a+b, "Alex");
+		GUI.removeCar(Alexcar, "Alex");
 		GUI.setCar(a+b, "Alex");
+		Alexcar = Alexcar + a + b;
 		
 		}
 		
