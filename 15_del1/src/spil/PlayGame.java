@@ -7,9 +7,9 @@ public class PlayGame {
 	public static void main(String[] args)
 	{
 
-		String PlayerName1 = GUI.getUserString("PLayer 1´: Enter Your Name");
+		String PlayerName1 = GUI.getUserString("Player 1: Enter Your Name");
 		GUI.addPlayer(PlayerName1, 0);
-		String PlayerName2 = GUI.getUserString("PLayer 2´: Enter Your Name");
+		String PlayerName2 = GUI.getUserString("Player 2: Enter Your Name");
 		GUI.addPlayer(PlayerName2, 0);
 		
 		int d1;
@@ -24,13 +24,10 @@ public class PlayGame {
 		while (car1 < 41 && car2 < 41) {
 		
 		while (true) {	
-		GUI.getUserButtonPressed(" ", "ROLL DICE");
+		GUI.getUserButtonPressed(" ", PlayerName1 + " ROLL DICE");
 		
-		//d1 = Dice.roll();
-		//d2 = Dice.roll();
-		
-		d1 = 6;
-		d2 = 6;
+		d1 = Dice.roll();
+		d2 = Dice.roll();
 			
 		GUI.setDice(d1,d2);
 		
@@ -66,7 +63,7 @@ public class PlayGame {
 			break;}
 		
 		while (true) {
-		GUI.getUserButtonPressed(" ", "ROLL DICE");
+		GUI.getUserButtonPressed(" ", PlayerName2 + " ROLL DICE");
 		
 		d1 = Dice.roll();
 		d2 = Dice.roll();
