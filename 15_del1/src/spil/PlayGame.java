@@ -45,19 +45,21 @@ public class PlayGame {
 		if (d1 == 6 && d2 == 6) 
 			sixcounter = sixcounter + 1;
 		else sixcounter = 0;
-		if (car1>40) {
+		if (d1 != d2){
+			car1 = car1 + d1 + d2;
+			if (car1 >= 40)
+				break;
+			else GUI.setCar(car1, PlayerName1);
+			break;}
+		
+		if (sixcounter == 2) {
+			car1 = 41;
+			break;}
+		}
+		if (car1 >= 40) {
 			GUI.removeAllCars(PlayerName1);
 			GUI.removeAllCars(PlayerName2);
 			break;}
-		if (d1 != d2){
-			car1 = car1 + d1 + d2;
-			GUI.setCar(car1, PlayerName1);
-			break;}
-		
-		if (sixcounter == 2)
-			car1 = 41;
-		}
-
 		
 		while (true) {
 		GUI.getUserButtonPressed(" ", "ROLL DICE");
@@ -74,32 +76,35 @@ public class PlayGame {
 		}
 		if (d1 == d2) {
 			car2 = car2 + d1 + d2;
-			GUI.setCar(car2, PlayerName2);
+			if (car2 >= 40)
+				break;
+			else GUI.setCar(car2, PlayerName2);
 		}
 		if (d1 == 6 && d2 == 6)
 			sixcounter = sixcounter + 1;
 		else sixcounter = 0;
-		if (car2>40) {
+		if (d1 != d2){
+			car2 = car2 + d1 + d2;
+			if (car2 >= 40)
+				break;
+			else GUI.setCar(car2, PlayerName2);
+			break;}
+		
+		if (sixcounter == 2) {
+			car2 = 41;
+			break;}
+		}
+		if (car2 >= 40) {
 			GUI.removeAllCars(PlayerName1);
 			GUI.removeAllCars(PlayerName2);
 			break;}
-		if (d1 != d2){
-			car2 = car2 + d1 + d2;
-			GUI.setCar(car2, PlayerName2);
-			break;}
-		
-		if (sixcounter == 2)
-			car2 = 41;
-		}
-	
-		
 		
 		
 	}
 		if (car2>car1) 
-			GUI.getUserButtonPressed(" ", PlayerName2 + " has Won");
-		if (car1>car2)
 			GUI.getUserButtonPressed(" ", PlayerName1 + " has Won");
+		if (car1>car2)
+			GUI.getUserButtonPressed(" ", PlayerName2 + " has Won");
 			
 		}
 	}
