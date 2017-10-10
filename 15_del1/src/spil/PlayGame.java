@@ -6,13 +6,14 @@ public class PlayGame {
 	
 	public static void main(String[] args)
 	{
+
 		String PlayerName1 = GUI.getUserString("PLayer 1´: Enter Your Name");
 		GUI.addPlayer(PlayerName1, 500);
 		String PlayerName2 = GUI.getUserString("PLayer 2´: Enter Your Name");
 		GUI.addPlayer(PlayerName2, 500);
 		
-		int a;
-		int b;
+		int d1;
+		int d2;
 		int car1 = 1;
 		int car2 = 1;
 				
@@ -23,13 +24,13 @@ public class PlayGame {
 		
 		GUI.getUserButtonPressed(" ", "ROLL DICE");
 		
-		a = Dice.roll();
-		b = Dice.roll();
-		GUI.setDice(a,b);
+		d1 = Dice.roll();
+		d2 = Dice.roll();
+		GUI.setDice(d1,d2);
 		
 		
 		GUI.removeAllCars(PlayerName1);
-		car1 = car1 + a+b;
+		car1 = car1 + d1 + d2;
 		
 		
 		if (car1>40) {
@@ -41,12 +42,12 @@ public class PlayGame {
 		
 		GUI.getUserButtonPressed(" ", "ROLL DICE");
 		
-		a = Dice.roll();
-		b = Dice.roll();
-		GUI.setDice(a, b);
+		d1 = Dice.roll();
+		d2 = Dice.roll();
+		GUI.setDice(d1, d2);
 		
 		GUI.removeAllCars(PlayerName2);
-		car2 = car2 + a+b;
+		car2 = car2 + d1 + d2;
 		
 		
 		if (car2>40) {
