@@ -8,20 +8,20 @@ public class PlayGame {
 	{
 
 		String PlayerName1 = GUI.getUserString("PLayer 1´: Enter Your Name");
-		GUI.addPlayer(PlayerName1, 500);
+		GUI.addPlayer(PlayerName1, 0);
 		String PlayerName2 = GUI.getUserString("PLayer 2´: Enter Your Name");
-		GUI.addPlayer(PlayerName2, 500);
+		GUI.addPlayer(PlayerName2, 0);
 		
 		int d1;
 		int d2;
 		int car1 = 1;
 		int car2 = 1;
-		int SixCounter = 0;
+		int sixcounter = 0;
 				
 		GUI.setCar(1, PlayerName1);
 		GUI.setCar(1, PlayerName2);
 		
-		while (true) {
+		while (car1 < 40 && car2 < 40) {
 		
 		while (true) {	
 		GUI.getUserButtonPressed(" ", "ROLL DICE");
@@ -34,28 +34,30 @@ public class PlayGame {
 		
 		
 		GUI.removeAllCars(PlayerName1);
-		if (d1 == 1 && d2 == 1)
+		if (d1 == 1 && d2 == 1) {
 			car1 = 1;
-		else
+			GUI.setCar(car1, PlayerName1);
+		}
+		if (d1 == d2) {
 			car1 = car1 + d1 + d2;
-		if (d1 != d2)
-			break;
-		else GUI.setCar(car1, PlayerName1);
-		if (d1 == 6 && d2 == 6 )
-			SixCounter++;
-		else
-			SixCounter=0;
-		if (SixCounter == 2)
+			GUI.setCar(car1, PlayerName1);
+		}
+		if (d1 == 6 && d2 == 6) 
+			sixcounter = sixcounter + 1;
+		else sixcounter = 0;
+		if (car1>40) {
+			GUI.removeAllCars(PlayerName1);
+			GUI.removeAllCars(PlayerName2);
+			break;}
+		if (d1 != d2){
+			car1 = car1 + d1 + d2;
+			GUI.setCar(car1, PlayerName1);
+			break;}
+		
+		if (sixcounter == 2)
 			car1 = 41;
 		}
-		if (car1>40) {
-			GUI.removeAllCars(PlayerName2);
-			GUI.removeAllCars(PlayerName1);
-			break;
-		}
 
-		
-		GUI.setCar(car1, PlayerName1);
 		
 		while (true) {
 		GUI.getUserButtonPressed(" ", "ROLL DICE");
@@ -66,28 +68,32 @@ public class PlayGame {
 		GUI.setDice(d1, d2);
 		
 		GUI.removeAllCars(PlayerName2);
-		if (d1 == 1 && d2 == 1)
+		if (d1 == 1 && d2 == 1) {
 			car2 = 1;
-		else
-			car2 = car2 + d1 + d2;
-		if (d1 != d2)
-			break;
-		else 
 			GUI.setCar(car2, PlayerName2);
-		if (d1 == 6 && d2 == 6 )
-			SixCounter++;
-		else
-			SixCounter=0;
-		if (SixCounter == 2)
+		}
+		if (d1 == d2) {
+			car2 = car2 + d1 + d2;
+			GUI.setCar(car2, PlayerName2);
+		}
+		if (d1 == 6 && d2 == 6)
+			sixcounter = sixcounter + 1;
+		else sixcounter = 0;
+		if (car2>40) {
+			GUI.removeAllCars(PlayerName1);
+			GUI.removeAllCars(PlayerName2);
+			break;}
+		if (d1 != d2){
+			car2 = car2 + d1 + d2;
+			GUI.setCar(car2, PlayerName2);
+			break;}
+		
+		if (sixcounter == 2)
 			car2 = 41;
 		}
-		if (car2>40) {
-			GUI.removeAllCars(PlayerName2);
-			GUI.removeAllCars(PlayerName1);
-			break;
-		}
+	
 		
-		GUI.setCar(car2, PlayerName2);
+		
 		
 	}
 		if (car2>car1) 
@@ -96,4 +102,5 @@ public class PlayGame {
 			GUI.getUserButtonPressed(" ", PlayerName1 + " has Won");
 			
 		}
-}
+	}
+
