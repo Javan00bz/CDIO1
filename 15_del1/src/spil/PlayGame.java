@@ -22,15 +22,21 @@ public class PlayGame {
 		
 		while (true) {
 		
+			
 		GUI.getUserButtonPressed(" ", "ROLL DICE");
 		
 		d1 = Dice.roll();
 		d2 = Dice.roll();
+		
+			
 		GUI.setDice(d1,d2);
 		
 		
 		GUI.removeAllCars(PlayerName1);
-		car1 = car1 + d1 + d2;
+		if (d1 == 1 && d2 == 1)
+			car1 = 1;
+		else
+			car1 = car1 + d1 + d2;
 		
 		
 		if (car1>40) {
@@ -38,16 +44,22 @@ public class PlayGame {
 			GUI.removeAllCars(PlayerName1);
 			break;
 		}
+
+		
 		GUI.setCar(car1, PlayerName1);
 		
 		GUI.getUserButtonPressed(" ", "ROLL DICE");
 		
 		d1 = Dice.roll();
 		d2 = Dice.roll();
+		
 		GUI.setDice(d1, d2);
 		
 		GUI.removeAllCars(PlayerName2);
-		car2 = car2 + d1 + d2;
+		if (d1 == 1 && d2 == 1)
+			car2 = 1;
+		else
+			car2 = car2 + d1 + d2;
 		
 		
 		if (car2>40) {
@@ -55,6 +67,7 @@ public class PlayGame {
 			GUI.removeAllCars(PlayerName1);
 			break;
 		}
+		
 		GUI.setCar(car2, PlayerName2);
 		
 	}
