@@ -2,7 +2,7 @@ package spil;
 
 public class Dice {
 
-	public int roll()
+	public static int roll()
 	{
 		int dice = (int)(Math.random()*6+1);
 		return dice;
