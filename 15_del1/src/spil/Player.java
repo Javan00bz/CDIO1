@@ -19,14 +19,13 @@ public class Player {
 	public int rollDice()
 	{
 		Dice cup = new Dice();
-		int roll = cup.roll();
-		Points = Points + roll;
-		System.out.println("You Rolled " + roll + ", Your Score is Now " + Points );
+		int roll1 = cup.roll();
+		int roll2 = cup.roll();
+		System.out.println("You Rolled " + roll1 + " and " + roll2 + ", Your Score is Now " + Points );
+		Points = Points + roll1 + roll2;
 		if (Points >= 40)
 			System.out.println("Winner Winner, Chicken Dinner");
 		return Points;
-		
-		
 	}
 		
 	
