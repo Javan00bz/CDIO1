@@ -37,7 +37,7 @@ public class PlayGame {
 			car1 = 1;
 			GUI.setCar(car1, PlayerName1);
 		}
-		if (d1 == d2) {
+		else if (d1 == d2) {
 			car1 = car1 + d1 + d2;
 			if (car1 >= 41)
 				break;
@@ -75,7 +75,7 @@ public class PlayGame {
 			car2 = 1;
 			GUI.setCar(car2, PlayerName2);
 		}
-		if (d1 == d2) {
+		else if (d1 == d2) {
 			car2 = car2 + d1 + d2;
 			if (car2 >= 41)
 				break;
