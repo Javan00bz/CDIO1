@@ -5,8 +5,8 @@ import desktop_resources.GUI;
 public class PlayGame {
 	
 	public static void main(String[] args)
-	{
-
+	{	
+		
 		String PlayerName1 = GUI.getUserString("Player 1: Enter Your Name");
 		GUI.addPlayer(PlayerName1, 0);
 		String PlayerName2 = GUI.getUserString("Player 2: Enter Your Name");
