@@ -5,8 +5,10 @@ import desktop_resources.GUI;
 public class PlayGame {
 	
 	public static void main(String[] args)
-	{	
+	{		
 		
+		GUI.showMessage("Welcome to the Dice Game. Your goal is to get around the board" );
+
 		String PlayerName1 = GUI.getUserString("Player 1: Enter Your Name");
 		GUI.addPlayer(PlayerName1, 0);
 		String PlayerName2 = GUI.getUserString("Player 2: Enter Your Name");
@@ -17,7 +19,9 @@ public class PlayGame {
 		int car1 = 1;
 		int car2 = 1;
 		int sixcounter = 0;
-				
+		
+		
+		
 		GUI.setCar(1, PlayerName1);
 		GUI.setCar(1, PlayerName2);
 		
