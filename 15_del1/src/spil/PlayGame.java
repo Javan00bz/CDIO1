@@ -6,6 +6,8 @@ public class PlayGame {
 	
 	public static void main(String[] args)
 	{
+		GUI.showMessage("Welcome to the game\n Double one, resets points.\n Double six twice, wins the game.\n Two of a kind, get an extra roll.\n First to 40 points, wins.");
+		
 
 		String PlayerName1 = GUI.getUserString("Player 1: Enter Your Name");
 		GUI.addPlayer(PlayerName1, 500);
