@@ -7,9 +7,9 @@ public class PlayGame {
 	public static void main(String[] args)
 	{
 
-		String PlayerName1 = GUI.getUserString("PLayer 1´: Enter Your Name");
+		String PlayerName1 = GUI.getUserString("Player 1: Enter Your Name");
 		GUI.addPlayer(PlayerName1, 500);
-		String PlayerName2 = GUI.getUserString("PLayer 2´: Enter Your Name");
+		String PlayerName2 = GUI.getUserString("Player 2´: Enter Your Name");
 		GUI.addPlayer(PlayerName2, 500);
 		
 		int d1;
