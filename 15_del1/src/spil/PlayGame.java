@@ -35,7 +35,7 @@ public class PlayGame {
 		}
 		GUI.addPlayer(PlayerName2, 0);
 
-	
+		// De to biler sættes på startfeldet
 		GUI.setCar(1, PlayerName1);
 		GUI.setCar(1, PlayerName2);
 
