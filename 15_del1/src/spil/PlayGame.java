@@ -98,7 +98,7 @@ public class PlayGame {
 				if (SixCounter == 2)
 					car2 = 41;
 			}
-			if (car2>40) { // Tjekker om bilen er noget i mål, hvis bilen er i mål breakes while-loopet og en vinder bliver fundet
+			if (car2>40) { // Tjekker om bilen er nået i mål, hvis bilen er i mål breakes while-loopet og en vinder bliver fundet
 				GUI.removeAllCars(PlayerName2);
 				GUI.removeAllCars(PlayerName1);
 				break;
