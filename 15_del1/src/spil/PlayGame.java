@@ -15,7 +15,13 @@ public class PlayGame {
 		Board board = new Board(); //Laver et nyt bræt og indlæser data fra Board klassen
 		board.BoardController();
 
-		GUI.showMessage("Welcome to the game\nDouble one, resets points.\nDouble six twice, wins the game.\nTwo of a kind, get an extra roll.\nFirst to 40 points, wins.");
+		int d1; // Variabel for den ene terning
+		int d2; // Varibal for den anden terning
+		int car1 = 1; // Variabel der holder styr på hvor den ene spiller er på pladen
+		int car2 = 1; // Variabel der holder styr på hvor den anden spiller er på pladen
+		int SixCounter = 0; // Tæller hvor mange gange i træk der er slået 6
+
+		GUI.showMessage("Welcome to the best Dice Game in the world!\nHere are the rules:\nRoll the dice to move your car\nIf you roll two ones, your lose your points\nIf you roll two of a kind, you get an extra turn\nIf you roll two sixes two times in a row, you win the game\nGet around the board before your oppponent to win\nGood Luck!");
 
 		String PlayerName1 = GUI.getUserString("Player 1: Enter Your Name"); //Spiller 1 indtaster sit navn
 		GUI.addPlayer(PlayerName1, 0);
@@ -29,19 +35,14 @@ public class PlayGame {
 		}
 		GUI.addPlayer(PlayerName2, 0);
 
-		int d1; // Variabel for den ene terning
-		int d2; // Varibal for den anden terning
-		int car1 = 1; // Variabel der holder styr på hvor den ene spiller er på pladen
-		int car2 = 1; // Variabel der holder styr på hvor den anden spiller er på pladen
-		int SixCounter = 0; // Tæller hvor mange gange i træk der er slået 6
-
+	
 		GUI.setCar(1, PlayerName1);
 		GUI.setCar(1, PlayerName2);
 
 		while (true) { //While loop for hele spillet, breakes først når en brik er i mål
 
 			while (true) {	//While loop for første spillers tur
-				GUI.getUserButtonPressed(" ", PlayerName1 + " ROLL DICE");
+				GUI.getUserButtonPressed(" ", PlayerName1 + ", it is your turn, click here to roll the dice");
 
 				//Ruller 2 terninger og viser dem på pladen
 				d1 = Dice.roll();
@@ -74,7 +75,7 @@ public class PlayGame {
 			GUI.setCar(car1, PlayerName1); //Placerer bilen på pladen
 
 			while (true) { //While loop for anden spillers tur
-				GUI.getUserButtonPressed(" ", PlayerName2 + " ROLL DICE");
+				GUI.getUserButtonPressed(" ", PlayerName2 + ", it is your turn, click here to roll the dice");
 
 				//Ruller 2 terninger og viser dem på pladen
 				d1 = Dice.roll();
